@@ -1,3 +1,11 @@
+//----------------------------------------
+// Arduino-Car
+//
+// Author: Adrian T
+// Created:     August 17, 2022
+// Updated:     August 17,2022
+//----------------------------------------
+
 struct Motor {
     // The motor struct is a readable way for 
     // me to interact with each individual motor.
@@ -30,16 +38,16 @@ struct Car {
     // The car struct is a readable way for me
     // to control all functionality of the car.
 
-    ////////////////
-    // Components //
-    ////////////////
+    ////////////////////
+    // Car Components //
+    ////////////////////
 
     Motor right_motor;
     Motor left_motor;
 
-    ///////////////////
-    // Functionality //
-    ///////////////////
+    ///////////////////////
+    // Car Functionality //
+    ///////////////////////
 
     void move_forward() {
         right_motor.move_forward();
