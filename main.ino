@@ -75,7 +75,13 @@ struct Car {
     }
 };
 
-void setup() {} // Setup isn't needed for this program.
+void setup() {
+    for(int pin = 4; pin <= 7; pin++) {
+        pinMode(pin, OUTPUT);
+    }
+}
+
+
 void loop() {
     Car car = {
         {4, 5},
