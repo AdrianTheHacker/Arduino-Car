@@ -61,11 +61,11 @@ struct Car {
 
     void turn_left() {
         right_motor.move_forward();
-        left_motor.stop();
+        left_motor.move_backward();
     }
 
     void turn_right() {
-        right_motor.stop();
+        right_motor.move_backward();
         left_motor.move_forward();
     }
 
@@ -74,6 +74,21 @@ struct Car {
         left_motor.stop();
     }
 };
+
+void test_run(Car car) {
+    int interval = 5000;
+
+    car.move_forward();
+    delay(interval);
+    car.move_backward();
+    delay(interval);
+    car.turn_left();
+    delay(interval);
+    car.turn_right();
+    delay(interval);
+    car.stop();
+    delay(interval);
+}
 
 void setup() {
     for(int pin = 4; pin <= 7; pin++) {
@@ -84,7 +99,9 @@ void setup() {
 
 void loop() {
     Car car = {
-        {4, 5},
-        {6, 7},
+        {3, 5}, 
+        {9, 6},
     };
+
+    test_run(car);
 }
