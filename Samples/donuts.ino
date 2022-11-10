@@ -6,8 +6,9 @@
 // Updated:     August 17,2022
 //----------------------------------------
 
-#include <Servo.h>
+#include <Servo.h>      // If using VScode with the Arduino Extension, Ignore this error message.
 
+#define DELAY 400
 Servo servo;
 
 struct Motor {
@@ -150,4 +151,9 @@ void loop() {
         {3, 5}, 
         {9, 6},
     };
+
+    car.sharp_turn_left();
+    delay(DELAY * 2);
+    car.sharp_turn_right();
+    delay(DELAY * 2);
 }
